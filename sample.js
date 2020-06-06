@@ -29,12 +29,19 @@ function check() {
     else if(c !== '' && c === f && f === i) win();
     else if(a !== '' && a === e && e === i) win();
     else if(c !== '' && c === e && e === g) win();
+    if(turn === 9) draw();
 }
 
 function win() {
     var elem = document.getElementById('finish');
     var player = (turn % 2 === 0 ? '×' : '○');
     elem.innerHTML = '<h1>' + player + 'の勝ちです</h1>';
+    fin = true;
+}
+
+function draw() {
+    var elem = document.getElementById('finish');
+    elem.innerHTML = '<h1>引き分けです</h1>';
     fin = true;
 }
 
